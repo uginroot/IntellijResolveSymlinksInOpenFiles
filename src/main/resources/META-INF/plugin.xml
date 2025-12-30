@@ -1,0 +1,14 @@
+<!-- Plugin Configuration File: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>org.ugingoot.ResolveSymlinksInOpenFiles</id>
+    <name>Resolve Symlinks In Open Files</name>
+    <vendor email="uginroot@gmail.com">Uginroot</vendor>
+    <description><![CDATA[
+        A simple IntelliJ IDEA plugin that resolves symbolic links when opening files.
+        This ensures that the IDE always works with the actual file paths, improving file management and consistency across different environments.
+    ]]></description>
+    <version>1.0.0</version>
+    <applicationListeners>
+        <listener class="org.ugingoot.resolvesymlinksinfpenfiles.OpenFileListener" topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
+    </applicationListeners>
+</idea-plugin>
