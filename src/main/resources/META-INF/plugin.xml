@@ -11,4 +11,5 @@
     <applicationListeners>
         <listener class="org.ugingoot.resolvesymlinksinfpenfiles.OpenFileListener" topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
     </applicationListeners>
+    <depends>com.intellij.modules.platform</depends>
 </idea-plugin>
