@@ -1,5 +1,6 @@
 package org.ugingoot.resolvesymlinksinfpenfiles
 
+import com.intellij.openapi.editor.ScrollType
 import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.fileEditor.FileEditorManagerListener
 import com.intellij.openapi.vfs.VirtualFile
@@ -24,6 +25,7 @@ class OpenFileListener : FileEditorManagerListener {
             source.closeFile(file)
             source.openFile(realFile, true)
             source.selectedTextEditor!!.caretModel.moveToLogicalPosition(pos)
+            source.selectedTextEditor!!.scrollingModel.scrollToCaret(ScrollType.CENTER)
         })
     }
 }

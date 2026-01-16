@@ -7,7 +7,7 @@
         A simple IntelliJ IDEA plugin that resolves symbolic links when opening files.
         This ensures that the IDE always works with the actual file paths, improving file management and consistency across different environments.
     ]]></description>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <applicationListeners>
         <listener class="org.ugingoot.resolvesymlinksinfpenfiles.OpenFileListener" topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
     </applicationListeners>

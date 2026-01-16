@@ -26,6 +26,7 @@ class OpenFileListener : FileEditorManagerListener {
             source.closeFile(file)
             source.openFile(realFile, true)
             source.selectedTextEditor!!.caretModel.moveToLogicalPosition(pos)
+            source.selectedTextEditor!!.scrollingModel.scrollToCaret(ScrollType.CENTER)
         })
     }
 }
