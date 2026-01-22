@@ -12,7 +12,13 @@ class OpenFileListener : FileEditorManagerListener {
         source: FileEditorManager,
         file: VirtualFile
     ) {
-        val path = Paths.get(file.path).toRealPath().toString()
+        val path: String
+        try {
+            path = Paths.get(file.path).toRealPath().toString()
+        } catch (_: Exception) {
+            // File does not exist or cannot be resolved
+            return
+        }
         if (path == file.path) {
             return
         }
