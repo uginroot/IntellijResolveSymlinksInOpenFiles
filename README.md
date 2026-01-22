@@ -9,13 +9,22 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener
 import com.intellij.openapi.vfs.VirtualFile
 import java.nio.file.Paths
 
+
 class OpenFileListener : FileEditorManagerListener {
     override fun fileOpened(
         source: FileEditorManager,
         file: VirtualFile
     ) {
-        val path = Paths.get(file.path).toRealPath().toString()
-        if (path == file.path) {
+        val path: String
+        try {
+            path = Paths.get(file.path).toRealPath().toString()
+        } catch (_: Exception) {
+            // File does not exist or cannot be resolved
+            return
+        }
+
+        // Fix: on Windows, the paths may differ only in slashes
+        if (path.replace('\\', '/') == file.path) {
             return
         }
 

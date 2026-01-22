@@ -19,6 +19,8 @@ class OpenFileListener : FileEditorManagerListener {
             // File does not exist or cannot be resolved
             return
         }
+
+        // Fix: on Windows, the paths may differ only in slashes
         if (path.replace('\\', '/') == file.path) {
             return
         }
