@@ -7,21 +7,25 @@
         A simple IntelliJ IDEA plugin that resolves symbolic links when opening files.
         This ensures that the IDE always works with the actual file paths, improving file management and consistency across different environments.
     ]]></description>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <applicationListeners>
         <listener class="org.ugingoot.resolvesymlinksinfpenfiles.OpenFileListener" topic="com.intellij.openapi.fileEditor.FileEditorManagerListener"/>
     </applicationListeners>
     <depends>com.intellij.modules.platform</depends>
     <change-notes><![CDATA[
-        <h2>1.0.2</h2>
+        <h4>1.0.3</h4>
+        <ul>
+            <li>fix: normalize path separators in OpenFileListener for Windows</li>
+        </ul>
+        <h4>1.0.2</h4>
         <ul>
             <li>fix: exception when resolve real path on not existing file</li>
         </ul>
-        <h2>1.0.1</h2>
+        <h4>1.0.1</h4>
         <ul>
             <li>scroll to cursor position</li>
         </ul>
-        <h2>1.0.0</h2>
+        <h4>1.0.0</h4>
         <ul>
             <li>Initial release of Resolve Symlinks In Open Files plugin.</li>
         </ul>

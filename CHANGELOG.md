@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.3
++ fix: normalize path separators in OpenFileListener for Windows
+
 ## 1.0.2
 + fix: exception when resolve real path on not existing file
 

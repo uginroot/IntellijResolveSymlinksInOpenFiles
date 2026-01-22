@@ -19,7 +19,7 @@ class OpenFileListener : FileEditorManagerListener {
             // File does not exist or cannot be resolved
             return
         }
-        if (path == file.path) {
+        if (path.replace('\\', '/') == file.path) {
             return
         }
 
